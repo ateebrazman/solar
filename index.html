@@ -123,58 +123,109 @@ transform: translateY(-5px);
 <body class="bg-gray-50">
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
-<div class="w-full px-4 sm:px-6 py-4">
-<div class="flex items-center justify-between">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-center px-4 sm:px-6 py-3">
 <div class="flex items-center space-x-2">
 <div class="w-8 sm:w-10 h-8 sm:h-10 bg-primary rounded-lg flex items-center justify-center">
 <i class="ri-leaf-line text-white text-lg sm:text-xl"></i>
 </div>
 <span class="text-xl sm:text-2xl font-['Pacifico'] text-primary">SolarEast</span>
 </div>
-<div class="hidden md:flex items-center space-x-6 lg:space-x-8">
-<div class="relative">
-<div class="flex items-center bg-gray-50 rounded-full pr-4">
-<input type="text" placeholder="Search products..." class="w-40 lg:w-48 py-2 px-4 bg-transparent border-none text-sm focus:outline-none rounded-l-full" id="searchInput">
-<button class="text-gray-500 hover:text-primary transition-colors" id="searchButton">
-<i class="ri-search-line text-lg"></i>
-</button>
+<div class="hidden lg:flex items-center space-x-1">
+<div class="relative group px-3 py-2">
+<button class="text-gray-700 group-hover:text-primary transition-colors font-medium">Products</button>
 </div>
-<div class="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg hidden" id="searchResults">
-<div class="p-4">
-<div class="text-sm text-gray-600">No results found</div>
-</div>
-</div>
-</div>
-<a href="#products" class="text-gray-700 hover:text-primary transition-colors font-medium">Products</a>
-<div class="relative dropdown">
-<button class="text-gray-700 hover:text-primary transition-colors font-medium flex items-center space-x-1">
+<div class="relative group px-3 py-2">
+<button class="flex items-center text-gray-700 group-hover:text-primary transition-colors font-medium">
 <span>About</span>
-<i class="ri-arrow-down-s-line text-sm"></i>
+<i class="ri-arrow-down-s-line ml-1"></i>
 </button>
-<div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border">
+<div class="hidden group-hover:block absolute top-full left-0 w-64 bg-white rounded-lg shadow-xl border mt-1">
 <a href="#story" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Our Story</a>
 <a href="#values" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Core Values</a>
 <a href="#team" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Leadership Team</a>
 <a href="#manufacturing" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Manufacturing Excellence</a>
 </div>
 </div>
-<a href="#resources" class="text-gray-700 hover:text-primary transition-colors font-medium">Resources</a>
-<a href="#services" class="text-gray-700 hover:text-primary transition-colors font-medium">Services</a>
-<div class="relative dropdown">
-<button class="text-gray-700 hover:text-primary transition-colors font-medium flex items-center space-x-1">
+<div class="relative group px-3 py-2">
+<button class="text-gray-700 group-hover:text-primary transition-colors font-medium">Resources</button>
+</div>
+<div class="relative group px-3 py-2">
+<button class="text-gray-700 group-hover:text-primary transition-colors font-medium">Services</button>
+</div>
+<div class="relative group px-3 py-2">
+<button class="flex items-center text-gray-700 group-hover:text-primary transition-colors font-medium">
 <span>News</span>
-<i class="ri-arrow-down-s-line text-sm"></i>
+<i class="ri-arrow-down-s-line ml-1"></i>
 </button>
-<div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border">
+<div class="hidden group-hover:block absolute top-full left-0 w-56 bg-white rounded-lg shadow-xl border mt-1">
 <a href="#company-news" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Company News</a>
 <a href="#industry-insights" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Industry Insights</a>
 </div>
 </div>
-<a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium">Contact</a>
+<div class="relative group px-3 py-2">
+<button class="text-gray-700 group-hover:text-primary transition-colors font-medium">Contact</button>
 </div>
-<button class="md:hidden w-8 h-8 flex items-center justify-center">
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative hidden md:block">
+<div class="flex items-center bg-gray-50 rounded-full pr-4">
+<input type="text" placeholder="Search products..." class="w-40 lg:w-48 py-2 px-4 bg-transparent border-none text-sm focus:outline-none rounded-l-full" id="searchInput">
+<button class="text-gray-500 hover:text-primary transition-colors" id="searchButton">
+<i class="ri-search-line text-lg"></i>
+</button>
+</div>
+<div class="absolute top-full right-0 mt-2 w-72 bg-white rounded-lg shadow-lg hidden" id="searchResults">
+<div class="p-4">
+<div class="text-sm text-gray-600">No results found</div>
+</div>
+</div>
+</div>
+<button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100" id="mobileMenuButton">
 <i class="ri-menu-line text-xl"></i>
 </button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div class="hidden lg:hidden" id="mobileMenu">
+<div class="px-4 py-3 space-y-3 border-t">
+<a href="#products" class="block text-gray-700 hover:text-primary font-medium">Products</a>
+<div class="relative" x-data="{ open: false }">
+<button class="flex items-center justify-between w-full text-gray-700 hover:text-primary font-medium" id="aboutDropdownButton">
+<span>About</span>
+<i class="ri-arrow-down-s-line"></i>
+</button>
+<div class="hidden pl-4 py-2 space-y-2" id="aboutDropdown">
+<a href="#story" class="block text-gray-600 hover:text-primary">Our Story</a>
+<a href="#values" class="block text-gray-600 hover:text-primary">Core Values</a>
+<a href="#team" class="block text-gray-600 hover:text-primary">Leadership Team</a>
+<a href="#manufacturing" class="block text-gray-600 hover:text-primary">Manufacturing Excellence</a>
+</div>
+</div>
+<a href="#resources" class="block text-gray-700 hover:text-primary font-medium">Resources</a>
+<a href="#services" class="block text-gray-700 hover:text-primary font-medium">Services</a>
+<div class="relative" x-data="{ open: false }">
+<button class="flex items-center justify-between w-full text-gray-700 hover:text-primary font-medium" id="newsDropdownButton">
+<span>News</span>
+<i class="ri-arrow-down-s-line"></i>
+</button>
+<div class="hidden pl-4 py-2 space-y-2" id="newsDropdown">
+<a href="#company-news" class="block text-gray-600 hover:text-primary">Company News</a>
+<a href="#industry-insights" class="block text-gray-600 hover:text-primary">Industry Insights</a>
+</div>
+</div>
+<a href="#contact" class="block text-gray-700 hover:text-primary font-medium">Contact</a>
+<div class="mt-4">
+<div class="relative">
+<div class="flex items-center bg-gray-50 rounded-full pr-4">
+<input type="text" placeholder="Search products..." class="w-full py-2 px-4 bg-transparent border-none text-sm focus:outline-none rounded-l-full" id="mobileSearchInput">
+<button class="text-gray-500 hover:text-primary transition-colors" id="mobileSearchButton">
+<i class="ri-search-line text-lg"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </nav>
@@ -698,31 +749,35 @@ Leading manufacturer of R290 heat pumps, committed to sustainable energy solutio
 <script id="navigation-script">
 document.addEventListener('DOMContentLoaded', function() {
 const nav = document.querySelector('nav');
-const searchInput = document.getElementById('searchInput');
-const searchButton = document.getElementById('searchButton');
-const searchResults = document.getElementById('searchResults');
-if (searchInput && searchButton && searchResults) {
-searchInput.addEventListener('focus', () => {
-searchResults.classList.remove('hidden');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuButton = document.getElementById('mobileMenuButton');
+const aboutDropdownButton = document.getElementById('aboutDropdownButton');
+const newsDropdownButton = document.getElementById('newsDropdownButton');
+const aboutDropdown = document.getElementById('aboutDropdown');
+const newsDropdown = document.getElementById('newsDropdown');
+function handleSearch(input, button, results) {
+if (input && button && results) {
+input.addEventListener('focus', () => {
+results.classList.remove('hidden');
 });
 document.addEventListener('click', (e) => {
-if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-searchResults.classList.add('hidden');
+if (!input.contains(e.target) && !results.contains(e.target)) {
+results.classList.add('hidden');
 }
 });
-searchButton.addEventListener('click', () => {
-const query = searchInput.value.trim();
+button.addEventListener('click', () => {
+const query = input.value.trim();
 if (query) {
-searchResults.innerHTML = `
+results.innerHTML = `
 <div class="p-4">
 <div class="animate-pulse">
 <div class="text-sm text-gray-600">Searching for "${query}"...</div>
 </div>
 </div>
 `;
-searchResults.classList.remove('hidden');
+results.classList.remove('hidden');
 setTimeout(() => {
-searchResults.innerHTML = `
+results.innerHTML = `
 <div class="p-4">
 <div class="space-y-4">
 <div class="flex items-center space-x-4">
@@ -749,76 +804,48 @@ searchResults.innerHTML = `
 }, 1000);
 }
 });
-searchInput.addEventListener('keypress', (e) => {
+input.addEventListener('keypress', (e) => {
 if (e.key === 'Enter') {
-searchButton.click();
+button.click();
 }
 });
 }
-const mobileMenuBtn = document.querySelector('.md\\:hidden button');
-if (mobileMenuBtn) {
-let mobileMenu = document.createElement('div');
-mobileMenu.className = 'fixed inset-0 bg-white z-50 transform transition-transform duration-300 translate-x-full md:hidden';
-mobileMenu.innerHTML = `
-<div class="p-6">
-<div class="flex justify-between items-center mb-8">
-<div class="flex items-center space-x-2">
-<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-<i class="ri-leaf-line text-white"></i>
-</div>
-<span class="text-xl font-['Pacifico'] text-primary">SolarEast</span>
-</div>
-<button class="mobile-close w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100">
-<i class="ri-close-line text-2xl text-gray-600"></i>
-</button>
-</div>
-<div class="flex flex-col space-y-6">
-<a href="#products" class="text-gray-800 hover:text-primary text-lg font-medium">Products</a>
-<a href="#about" class="text-gray-800 hover:text-primary text-lg font-medium">About</a>
-<a href="#resources" class="text-gray-800 hover:text-primary text-lg font-medium">Resources</a>
-<a href="#services" class="text-gray-800 hover:text-primary text-lg font-medium">Services</a>
-<a href="#news" class="text-gray-800 hover:text-primary text-lg font-medium">News</a>
-<a href="#contact" class="text-gray-800 hover:text-primary text-lg font-medium">Contact</a>
-<div class="pt-6">
-<button class="w-full bg-primary hover:bg-green-800 text-white px-6 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap mb-4">
-Get Quote
-</button>
-<button class="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
-Schedule Consultation
-</button>
-</div>
-</div>
-</div>
-`;
-document.body.appendChild(mobileMenu);
-const closeBtn = mobileMenu.querySelector('.mobile-close');
-const menuLinks = mobileMenu.querySelectorAll('a');
-if (closeBtn) {
-closeBtn.addEventListener('click', () => {
-mobileMenu.classList.add('translate-x-full');
-document.body.style.overflow = '';
-});
 }
-menuLinks.forEach(link => {
-link.addEventListener('click', () => {
-mobileMenu.classList.add('translate-x-full');
-document.body.style.overflow = '';
-});
-});
-mobileMenuBtn.addEventListener('click', () => {
-mobileMenu.classList.remove('translate-x-full');
-document.body.style.overflow = 'hidden';
+handleSearch(
+document.getElementById('searchInput'),
+document.getElementById('searchButton'),
+document.getElementById('searchResults')
+);
+handleSearch(
+document.getElementById('mobileSearchInput'),
+document.getElementById('mobileSearchButton'),
+document.getElementById('searchResults')
+);
+if (mobileMenuButton && mobileMenu) {
+mobileMenuButton.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
 });
 document.addEventListener('click', (e) => {
-if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && !mobileMenu.classList.contains('translate-x-full')) {
-mobileMenu.classList.add('translate-x-full');
-document.body.style.overflow = '';
+if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
 }
+});
+}
+if (aboutDropdownButton && aboutDropdown) {
+aboutDropdownButton.addEventListener('click', () => {
+aboutDropdown.classList.toggle('hidden');
+aboutDropdownButton.querySelector('i').classList.toggle('rotate-180');
+});
+}
+if (newsDropdownButton && newsDropdown) {
+newsDropdownButton.addEventListener('click', () => {
+newsDropdown.classList.toggle('hidden');
+newsDropdownButton.querySelector('i').classList.toggle('rotate-180');
 });
 }
 window.addEventListener('scroll', function() {
 if (window.scrollY > 100) {
-nav.classList.add('bg-white', 'shadow-lg');
+nav.classList.add('shadow-lg');
 } else {
 nav.classList.remove('shadow-lg');
 }
@@ -835,6 +862,9 @@ window.scrollTo({
 top: offsetTop,
 behavior: 'smooth'
 });
+if (!mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
+}
 }
 });
 });
