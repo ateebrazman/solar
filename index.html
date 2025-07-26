@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolarEast - R290 Heat Pumps | Green Mission · Better Life</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#166534',
+secondary: '#22c55e'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+body {
+font-family: 'Inter', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 768px) {
+.hero-bg {
+background-attachment: scroll !important;
+}
+}
+.hero-bg {
+background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(59, 130, 246, 0.8) 100%),
+url('https://readdy.ai/api/search-image?query=modern%20industrial%20heat%20pump%20facility%20with%20green%20energy%20technology%2C%20solar%20panels%2C%20sustainable%20manufacturing%20plant%2C%20clean%20white%20background%2C%20professional%20lighting%2C%20environmental%20consciousness%2C%20innovation%20in%20renewable%20energy%20systems&width=1920&height=1080&seq=hero-bg&orientation=landscape');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+@keyframes marquee {
+0% { transform: translateX(0); }
+100% { transform: translateX(-100%); }
+}
+@keyframes marquee2 {
+0% { transform: translateX(100%); }
+100% { transform: translateX(0); }
+}
+.animate-marquee {
+animation: marquee 25s linear infinite;
+}
+.animate-marquee2 {
+animation: marquee2 25s linear infinite;
+}
+.animate-float {
+animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+0%, 100% { transform: translateY(0px); }
+50% { transform: translateY(-20px); }
+}
+.animate-pulse-slow {
+animation: pulse-slow 3s ease-in-out infinite;
+}
+@keyframes pulse-slow {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.7; }
+}
+.dropdown-menu {
+opacity: 0;
+visibility: hidden;
+transform: translateY(-10px);
+transition: all 0.3s ease;
+}
+.dropdown:hover .dropdown-menu {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+}
+.card-hover {
+transition: all 0.3s ease;
+}
+.card-hover:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.counter {
+font-variant-numeric: tabular-nums;
+}
+.scroll-indicator {
+animation: bounce 2s infinite;
+}
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% {
+transform: translateY(0);
+}
+40% {
+transform: translateY(-10px);
+}
+60% {
+transform: translateY(-5px);
+}
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
+<div class="w-full px-4 sm:px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="w-8 sm:w-10 h-8 sm:h-10 bg-primary rounded-lg flex items-center justify-center">
+<i class="ri-leaf-line text-white text-lg sm:text-xl"></i>
+</div>
+<span class="text-xl sm:text-2xl font-['Pacifico'] text-primary">SolarEast</span>
+</div>
+<div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+<div class="relative">
+<div class="flex items-center bg-gray-50 rounded-full pr-4">
+<input type="text" placeholder="Search products..." class="w-40 lg:w-48 py-2 px-4 bg-transparent border-none text-sm focus:outline-none rounded-l-full" id="searchInput">
+<button class="text-gray-500 hover:text-primary transition-colors" id="searchButton">
+<i class="ri-search-line text-lg"></i>
+</button>
+</div>
+<div class="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg hidden" id="searchResults">
+<div class="p-4">
+<div class="text-sm text-gray-600">No results found</div>
+</div>
+</div>
+</div>
+<a href="#products" class="text-gray-700 hover:text-primary transition-colors font-medium">Products</a>
+<div class="relative dropdown">
+<button class="text-gray-700 hover:text-primary transition-colors font-medium flex items-center space-x-1">
+<span>About</span>
+<i class="ri-arrow-down-s-line text-sm"></i>
+</button>
+<div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border">
+<a href="#story" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Our Story</a>
+<a href="#values" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Core Values</a>
+<a href="#team" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Leadership Team</a>
+<a href="#manufacturing" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Manufacturing Excellence</a>
+</div>
+</div>
+<a href="#resources" class="text-gray-700 hover:text-primary transition-colors font-medium">Resources</a>
+<a href="#services" class="text-gray-700 hover:text-primary transition-colors font-medium">Services</a>
+<div class="relative dropdown">
+<button class="text-gray-700 hover:text-primary transition-colors font-medium flex items-center space-x-1">
+<span>News</span>
+<i class="ri-arrow-down-s-line text-sm"></i>
+</button>
+<div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl border">
+<a href="#company-news" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Company News</a>
+<a href="#industry-insights" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors">Industry Insights</a>
+</div>
+</div>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium">Contact</a>
+</div>
+<button class="md:hidden w-8 h-8 flex items-center justify-center">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-bg min-h-screen flex items-center justify-center text-white relative overflow-hidden">
+<div class="w-full px-4 sm:px-6 py-12 sm:py-20">
+<div class="max-w-6xl mx-auto">
+<div class="text-center">
+<div class="animate-float mb-6 sm:mb-8">
+<div class="w-16 sm:w-24 h-16 sm:h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+<i class="ri-leaf-line text-2xl sm:text-4xl text-white"></i>
+</div>
+</div>
+<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
+Green Mission
+<span class="block text-secondary">Better Life</span>
+</h1>
+<p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light">
+We don't just assemble — we engineer from the inside out.
+</p>
+<p class="text-lg mb-12 max-w-2xl mx-auto opacity-90">
+Leading manufacturer of R290 heat pumps, dedicated to sustainable energy solutions that transform how the world thinks about heating and cooling.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="bg-secondary hover:bg-green-600 text-white px-8 py-4 !rounded-button font-semibold text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
+Explore Products
+</button>
+<button class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 !rounded-button font-semibold text-lg transition-all duration-300 whitespace-nowrap">
+Learn More
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator">
+<div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+<div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse-slow"></div>
+</div>
+</div>
+</section>
+<!-- Value Proposition Section -->
+<section class="py-20 bg-white">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-6">Why Choose SolarEast</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Our commitment to innovation, quality, and sustainability sets us apart in the renewable energy industry.
+</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+<div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-xl text-center">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-settings-3-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4 text-gray-900">In-House Engineering</h3>
+<p class="text-gray-600">Complete control over design and manufacturing ensures superior quality and performance in every heat pump.</p>
+</div>
+<div class="card-hover bg-gray-50 p-8 rounded-xl text-center">
+<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-leaf-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4 text-gray-900">R290 Technology</h3>
+<p class="text-gray-600">Environmentally friendly refrigerant with zero ozone depletion potential and minimal global warming impact.</p>
+</div>
+<div class="card-hover bg-gray-50 p-8 rounded-xl text-center">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-shield-check-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4 text-gray-900">Proven Reliability</h3>
+<p class="text-gray-600">Rigorous testing and quality assurance processes ensure long-lasting performance and customer satisfaction.</p>
+</div>
+<div class="card-hover bg-gray-50 p-8 rounded-xl text-center">
+<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-customer-service-2-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4 text-gray-900">Expert Support</h3>
+<p class="text-gray-600">Comprehensive installation, maintenance, and technical support services from certified professionals.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Categories -->
+<section id="products" class="py-20 bg-gray-50">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-6">Our Product Range</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Discover our comprehensive range of R290 heat pumps designed for residential, commercial, and industrial applications.
+</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="card-hover bg-white rounded-xl overflow-hidden shadow-lg">
+<div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20residential%20heat%20pump%20system%20installed%20outside%20contemporary%20home%2C%20clean%20white%20background%2C%20professional%20product%20photography%2C%20energy%20efficient%20technology%2C%20sleek%20design%2C%20environmental%20sustainability&width=400&height=300&seq=residential-1&orientation=landscape')"></div>
+<div class="p-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-900">Residential Series</h3>
+<p class="text-gray-600 mb-6">Efficient heating and cooling solutions for homes, designed for optimal comfort and energy savings.</p>
+<ul class="text-sm text-gray-500 mb-6 space-y-2">
+<li>• Capacity: 5-25 kW</li>
+<li>• COP up to 4.8</li>
+<li>• Quiet operation</li>
+<li>• Smart controls</li>
+</ul>
+<button class="bg-primary hover:bg-green-800 text-white px-6 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
+View Models
+</button>
+</div>
+</div>
+<div class="card-hover bg-white rounded-xl overflow-hidden shadow-lg">
+<div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=commercial%20heat%20pump%20installation%20at%20modern%20office%20building%2C%20industrial%20HVAC%20system%2C%20professional%20installation%2C%20clean%20background%2C%20energy%20efficient%20commercial%20heating%20cooling%20technology&width=400&height=300&seq=commercial-1&orientation=landscape')"></div>
+<div class="p-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-900">Commercial Series</h3>
+<p class="text-gray-600 mb-6">Scalable solutions for offices, retail spaces, and medium-sized commercial buildings.</p>
+<ul class="text-sm text-gray-500 mb-6 space-y-2">
+<li>• Capacity: 20-100 kW</li>
+<li>• Modular design</li>
+<li>• Advanced controls</li>
+<li>• Low maintenance</li>
+</ul>
+<button class="bg-primary hover:bg-green-800 text-white px-6 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
+View Models
+</button>
+</div>
+</div>
+<div class="card-hover bg-white rounded-xl overflow-hidden shadow-lg">
+<div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=large%20industrial%20heat%20pump%20facility%20with%20multiple%20units%2C%20heavy%20duty%20commercial%20HVAC%20installation%2C%20industrial%20manufacturing%20plant%2C%20clean%20professional%20lighting%2C%20sustainable%20energy%20technology&width=400&height=300&seq=industrial-1&orientation=landscape')"></div>
+<div class="p-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-900">Industrial Series</h3>
+<p class="text-gray-600 mb-6">High-capacity systems for manufacturing facilities, warehouses, and large commercial complexes.</p>
+<ul class="text-sm text-gray-500 mb-6 space-y-2">
+<li>• Capacity: 100-500 kW</li>
+<li>• Robust construction</li>
+<li>• Remote monitoring</li>
+<li>• Custom solutions</li>
+</ul>
+<button class="bg-primary hover:bg-green-800 text-white px-6 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
+View Models
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Statistics -->
+<section class="py-20 bg-primary text-white">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold mb-6">Our Environmental Impact</h2>
+<p class="text-xl opacity-90 max-w-3xl mx-auto">
+Making a difference through sustainable technology and responsible manufacturing practices.
+</p>
+</div>
+<div class="grid md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="text-5xl font-bold mb-4 counter" data-target="50000">0</div>
+<p class="text-lg opacity-90">Heat Pumps Installed</p>
+</div>
+<div>
+<div class="text-5xl font-bold mb-4 counter" data-target="75">0</div>
+<p class="text-lg opacity-90">Countries Served</p>
+</div>
+<div>
+<div class="text-5xl font-bold mb-4 counter" data-target="2500000">0</div>
+<p class="text-lg opacity-90">Tons CO₂ Saved</p>
+</div>
+<div>
+<div class="text-5xl font-bold mb-4 counter" data-target="15">0</div>
+<p class="text-lg opacity-90">Years Experience</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest News -->
+<section id="company-news" class="py-20 bg-white">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-6">Latest News & Insights</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Stay updated with our latest developments, industry insights, and sustainability initiatives.
+</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<article class="card-hover bg-gray-50 rounded-xl overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20research%20and%20development%20laboratory%20for%20heat%20pump%20technology%2C%20scientists%20working%20on%20sustainable%20energy%20solutions%2C%20clean%20white%20background%2C%20innovation%20in%20renewable%20energy&width=400&height=300&seq=news-1&orientation=landscape')"></div>
+<div class="p-6">
+<div class="flex items-center space-x-4 mb-4">
+<span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Company News</span>
+<span class="text-gray-500 text-sm">March 15, 2024</span>
+</div>
+<h3 class="text-xl font-semibold mb-3 text-gray-900">SolarEast Opens New R&D Center</h3>
+<p class="text-gray-600 mb-4">Our new state-of-the-art research facility will accelerate innovation in R290 heat pump technology and sustainable energy solutions.</p>
+<a href="#" class="text-primary hover:text-green-800 font-medium">Read More →</a>
+</div>
+</article>
+<article class="card-hover bg-gray-50 rounded-xl overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=international%20business%20partnership%20meeting%20with%20renewable%20energy%20executives%2C%20professional%20conference%20room%2C%20global%20collaboration%20in%20sustainable%20technology%2C%20clean%20modern%20office%20environment&width=400&height=300&seq=news-2&orientation=landscape')"></div>
+<div class="p-6">
+<div class="flex items-center space-x-4 mb-4">
+<span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">Partnership</span>
+<span class="text-gray-500 text-sm">March 10, 2024</span>
+</div>
+<h3 class="text-xl font-semibold mb-3 text-gray-900">Strategic Partnership with European Distributors</h3>
+<p class="text-gray-600 mb-4">Expanding our global reach through new partnerships that will bring SolarEast heat pumps to more markets worldwide.</p>
+<a href="#" class="text-primary hover:text-green-800 font-medium">Read More →</a>
+</div>
+</article>
+<article class="card-hover bg-gray-50 rounded-xl overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=environmental%20sustainability%20award%20ceremony%2C%20green%20energy%20industry%20recognition%2C%20professional%20business%20award%20presentation%2C%20clean%20modern%20venue%2C%20renewable%20energy%20achievement&width=400&height=300&seq=news-3&orientation=landscape')"></div>
+<div class="p-6">
+<div class="flex items-center space-x-4 mb-4">
+<span class="bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">Award</span>
+<span class="text-gray-500 text-sm">March 5, 2024</span>
+</div>
+<h3 class="text-xl font-semibold mb-3 text-gray-900">Green Innovation Award 2024</h3>
+<p class="text-gray-600 mb-4">SolarEast receives recognition for outstanding contribution to sustainable heating technology and environmental protection.</p>
+<a href="#" class="text-primary hover:text-green-800 font-medium">Read More →</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Product Listing Section -->
+<section class="py-20 bg-white">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-6">Featured Products</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Explore our most popular R290 heat pump models designed for different applications.
+</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="card-hover bg-gray-50 rounded-xl p-6">
+<div class="aspect-square rounded-xl overflow-hidden mb-6">
+<img src="https://readdy.ai/api/search-image?query=modern%20sleek%20heat%20pump%20unit%20with%20minimalist%20design%2C%20white%20background%2C%20professional%20product%20photography%2C%20high-end%20appliance%2C%20energy%20efficient%20technology&width=400&height=400&seq=product-1&orientation=squarish" alt="Heat Pump Model A" class="w-full h-full object-cover">
+</div>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">EcoComfort Pro 25</h3>
+<p class="text-gray-600 mb-4">Residential heat pump with smart controls and ultra-quiet operation.</p>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-sm">
+<span class="text-gray-600">Capacity</span>
+<span class="font-medium">25 kW</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-600">COP</span>
+<span class="font-medium">4.8</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-600">Noise Level</span>
+<span class="font-medium">35 dB</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-green-800 text-white px-6 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
+Learn More
+</button>
+</div>
+<div class="card-hover bg-gray-50 rounded-xl p-6">
+<div class="aspect-square rounded-xl overflow-hidden mb-6">
+<img src="https://readdy.ai/api/search-image?query=commercial%20grade%20heat%20pump%20system%2C%20modern%20industrial%20design%2C%20white%20background%2C%20professional%20product%20photography%2C%20robust%20construction&width=400&height=400&seq=product-2&orientation=squarish" alt="Heat Pump Model B" class="w-full h-full object-cover">
+</div>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">PowerMax 100</h3>
+<p class="text-gray-600 mb-4">Commercial heat pump for large-scale applications with modular design.</p>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-sm">
+<span class="text-gray-600">Capacity</span>
+<span class="font-medium">100 kW</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-600">COP</span>
+<span class="font-medium">4.5</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-600">Connectivity</span>
+<span class="font-medium">Smart BMS</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-green-800 text-white px-6 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
+Learn More
+</button>
+</div>
+<div class="card-hover bg-gray-50 rounded-xl p-6">
+<div class="aspect-square rounded-xl overflow-hidden mb-6">
+<img src="https://readdy.ai/api/search-image?query=industrial%20heat%20pump%20installation%2C%20heavy%20duty%20commercial%20system%2C%20white%20background%2C%20professional%20product%20photography%2C%20advanced%20technology&width=400&height=400&seq=product-3&orientation=squarish" alt="Heat Pump Model C" class="w-full h-full object-cover">
+</div>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">IndustrialPro 500</h3>
+<p class="text-gray-600 mb-4">High-capacity industrial heat pump with advanced monitoring system.</p>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-sm">
+<span class="text-gray-600">Capacity</span>
+<span class="font-medium">500 kW</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-600">COP</span>
+<span class="font-medium">4.2</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-600">Remote Control</span>
+<span class="font-medium">Yes</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-green-800 text-white px-6 py-3 !rounded-button font-semibold transition-colors whitespace-nowrap">
+Learn More
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-20 bg-gray-50">
+<div class="max-w-6xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-6">What Our Clients Say</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Hear from organizations that have transformed their operations with SolarEast heat pumps.
+</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="card-hover bg-white rounded-xl p-8">
+<div class="flex items-center mb-6">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20middle%20aged%20asian%20business%20woman%2C%20confident%20smile%2C%20business%20attire%2C%20clean%20studio%20background&width=200&height=200&seq=testimonial-1&orientation=squarish" alt="Sarah Chen" class="w-16 h-16 rounded-full object-cover">
+<div class="ml-4">
+<h4 class="font-semibold text-gray-900">Sarah Chen</h4>
+<p class="text-gray-600">Facility Manager, Grand Plaza Hotel</p>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"The PowerMax 100 has significantly reduced our energy costs while maintaining perfect comfort levels for our guests. The smart controls make it incredibly easy to manage."</p>
+<div class="flex text-secondary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<div class="card-hover bg-white rounded-xl p-8">
+<div class="flex items-center mb-6">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20middle%20aged%20european%20man%2C%20friendly%20smile%2C%20business%20casual%20attire%2C%20clean%20studio%20background&width=200&height=200&seq=testimonial-2&orientation=squarish" alt="Michael Schmidt" class="w-16 h-16 rounded-full object-cover">
+<div class="ml-4">
+<h4 class="font-semibold text-gray-900">Michael Schmidt</h4>
+<p class="text-gray-600">Operations Director, EcoTech Manufacturing</p>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"The IndustrialPro 500 has exceeded our expectations. The system's reliability and performance have been crucial for our manufacturing processes."</p>
+<div class="flex text-secondary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<div class="card-hover bg-white rounded-xl p-8">
+<div class="flex items-center mb-6">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20middle%20aged%20american%20woman%2C%20warm%20smile%2C%20professional%20attire%2C%20clean%20studio%20background&width=200&height=200&seq=testimonial-3&orientation=squarish" alt="Emily Richardson" class="w-16 h-16 rounded-full object-cover">
+<div class="ml-4">
+<h4 class="font-semibold text-gray-900">Emily Richardson</h4>
+<p class="text-gray-600">Homeowner</p>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"Installing the EcoComfort Pro 25 was the best decision we made for our home. Our energy bills have dropped by 40%, and the system is whisper-quiet."</p>
+<div class="flex text-secondary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trusted Brands -->
+<section class="py-12 bg-gray-50 overflow-hidden">
+<div class="max-w-6xl mx-auto px-6 mb-8 relative">
+<div class="absolute left-0 w-32 h-full bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
+<div class="absolute right-0 w-32 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
+<h2 class="text-center text-3xl font-bold text-gray-900 mb-4">Trusted by Industry Leaders</h2>
+<p class="text-center text-gray-600 max-w-2xl mx-auto">Partnering with global brands to deliver sustainable heating and cooling solutions.</p>
+</div>
+<div class="relative">
+<div class="flex animate-marquee whitespace-nowrap">
+<div class="flex items-center justify-center min-w-[200px] px-8">
+<div class="w-32 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center">
+<i class="ri-microsoft-fill text-4xl text-gray-700"></i>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[200px] px-8">
+<div class="w-32 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center">
+<i class="ri-google-fill text-4xl text-gray-700"></i>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[200px] px-8">
+<div class="w-32 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center">
+<i class="ri-amazon-fill text-4xl text-gray-700"></i>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[200px] px-8">
+<div class="w-32 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center">
+<i class="ri-apple-fill text-4xl text-gray-700"></i>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[200px] px-8">
+<div class="w-32 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center">
+<i class="ri-tesla-fill text-4xl text-gray-700"></i>
+</div>
+</div>
+</div>
+<div class="flex animate-marquee2 whitespace-nowrap absolute top-0">
+<div class="flex items-center justify-center min-w-[200px] px-8">
+<div class="w-32 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center">
+<i class="ri-microsoft-fill text-4xl text-gray-700"></i>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[200px] px-8">
+<div class="w-32 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center">
+<i class="ri-google-fill text-4xl text-gray-700"></i>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[200px] px-8">
+<div class="w-32 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center">
+<i class="ri-amazon-fill text-4xl text-gray-700"></i>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[200px] px-8">
+<div class="w-32 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center">
+<i class="ri-apple-fill text-4xl text-gray-700"></i>
+</div>
+</div>
+<div class="flex items-center justify-center min-w-[200px] px-8">
+<div class="w-32 h-20 bg-white rounded-lg shadow-sm flex items-center justify-center">
+<i class="ri-tesla-fill text-4xl text-gray-700"></i>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<h2 class="text-4xl font-bold mb-6">Ready to Make the Switch?</h2>
+<p class="text-xl mb-8 opacity-90">
+Join thousands of satisfied customers who have chosen SolarEast for their heating and cooling needs.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-white text-primary hover:bg-gray-100 px-8 py-4 !rounded-button font-semibold text-lg transition-colors whitespace-nowrap">
+Get Quote
+</button>
+<button class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 !rounded-button font-semibold text-lg transition-all whitespace-nowrap">
+Schedule Consultation
+</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-16">
+<div class="max-w-6xl mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-8">
+<div>
+<div class="flex items-center space-x-2 mb-6">
+<div class="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
+<i class="ri-leaf-line text-white text-xl"></i>
+</div>
+<span class="text-2xl font-['Pacifico'] text-white">SolarEast</span>
+</div>
+<p class="text-gray-400 mb-6">
+Leading manufacturer of R290 heat pumps, committed to sustainable energy solutions and environmental protection.
+</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
+<i class="ri-facebook-line"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
+<i class="ri-twitter-line"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
+<i class="ri-linkedin-line"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors">
+<i class="ri-youtube-line"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Products</h3>
+<ul class="space-y-3 text-gray-400">
+<li><a href="#" class="hover:text-white transition-colors">Residential Heat Pumps</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Commercial Systems</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Industrial Solutions</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Custom OEM/ODM</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Company</h3>
+<ul class="space-y-3 text-gray-400">
+<li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Leadership Team</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Support</h3>
+<ul class="space-y-3 text-gray-400">
+<li><a href="#" class="hover:text-white transition-colors">Technical Support</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Installation Guide</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Warranty</a></li>
+<li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm">
+© 2024 SolarEast. All rights reserved.
+</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script id="navigation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const nav = document.querySelector('nav');
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const searchResults = document.getElementById('searchResults');
+if (searchInput && searchButton && searchResults) {
+searchInput.addEventListener('focus', () => {
+searchResults.classList.remove('hidden');
+});
+document.addEventListener('click', (e) => {
+if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+searchResults.classList.add('hidden');
+}
+});
+searchButton.addEventListener('click', () => {
+const query = searchInput.value.trim();
+if (query) {
+searchResults.innerHTML = `
+<div class="p-4">
+<div class="animate-pulse">
+<div class="text-sm text-gray-600">Searching for "${query}"...</div>
+</div>
+</div>
+`;
+searchResults.classList.remove('hidden');
+setTimeout(() => {
+searchResults.innerHTML = `
+<div class="p-4">
+<div class="space-y-4">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+<i class="ri-home-line text-gray-400"></i>
+</div>
+<div>
+<h4 class="text-sm font-medium">EcoComfort Pro 25</h4>
+<p class="text-xs text-gray-500">Residential Heat Pump</p>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+<i class="ri-building-line text-gray-400"></i>
+</div>
+<div>
+<h4 class="text-sm font-medium">PowerMax 100</h4>
+<p class="text-xs text-gray-500">Commercial Heat Pump</p>
+</div>
+</div>
+</div>
+</div>
+`;
+}, 1000);
+}
+});
+searchInput.addEventListener('keypress', (e) => {
+if (e.key === 'Enter') {
+searchButton.click();
+}
+});
+}
+const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+if (mobileMenuBtn) {
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'fixed inset-0 bg-white z-40 transform transition-transform duration-300 translate-x-full md:hidden';
+mobileMenu.innerHTML = `
+<div class="p-4">
+<div class="flex justify-end">
+<button class="mobile-close p-2">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<div class="flex flex-col space-y-4 mt-4">
+<a href="#products" class="text-gray-700 hover:text-primary py-2">Products</a>
+<a href="#about" class="text-gray-700 hover:text-primary py-2">About</a>
+<a href="#resources" class="text-gray-700 hover:text-primary py-2">Resources</a>
+<a href="#services" class="text-gray-700 hover:text-primary py-2">Services</a>
+<a href="#news" class="text-gray-700 hover:text-primary py-2">News</a>
+<a href="#contact" class="text-gray-700 hover:text-primary py-2">Contact</a>
+</div>
+</div>
+`;
+document.body.appendChild(mobileMenu);
+const closeBtn = mobileMenu.querySelector('.mobile-close');
+if (closeBtn) {
+closeBtn.addEventListener('click', () => {
+mobileMenu.classList.add('translate-x-full');
+document.body.style.overflow = '';
+});
+}
+mobileMenuBtn.addEventListener('click', () => {
+mobileMenu.classList.remove('translate-x-full');
+document.body.style.overflow = 'hidden';
+});
+}
+window.addEventListener('scroll', function() {
+if (window.scrollY > 100) {
+nav.classList.add('bg-white', 'shadow-lg');
+} else {
+nav.classList.remove('shadow-lg');
+}
+});
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href').substring(1);
+const targetElement = document.getElementById(targetId);
+if (targetElement) {
+const offsetTop = targetElement.offsetTop - 80;
+window.scrollTo({
+top: offsetTop,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script id="counter-animation">
+document.addEventListener('DOMContentLoaded', function() {
+const counters = document.querySelectorAll('.counter');
+const observerOptions = {
+threshold: 0.5,
+rootMargin: '0px 0px -100px 0px'
+};
+const observer = new IntersectionObserver(function(entries) {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const counter = entry.target;
+const target = parseInt(counter.getAttribute('data-target'));
+const duration = 2000;
+const step = target / (duration / 16);
+let current = 0;
+const timer = setInterval(() => {
+current += step;
+if (current >= target) {
+counter.textContent = target.toLocaleString();
+clearInterval(timer);
+} else {
+counter.textContent = Math.floor(current).toLocaleString();
+}
+}, 16);
+observer.unobserve(counter);
+}
+});
+}, observerOptions);
+counters.forEach(counter => {
+observer.observe(counter);
+});
+});
+</script>
+<script id="scroll-effects">
+document.addEventListener('DOMContentLoaded', function() {
+const cards = document.querySelectorAll('.card-hover');
+const cardObserver = new IntersectionObserver(function(entries) {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.opacity = '1';
+entry.target.style.transform = 'translateY(0)';
+}
+});
+}, {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+});
+cards.forEach(card => {
+card.style.opacity = '0';
+card.style.transform = 'translateY(30px)';
+card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+cardObserver.observe(card);
+});
+});
+</script>
+</body>
+</html>
